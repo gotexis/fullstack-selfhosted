@@ -1,0 +1,13 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: selfhosted-template
+    restart: unless-stopped
+    ports:
+      - "${PORT:-3900}:3900"
+    environment:
+      - NODE_ENV=production
+      - PORT=3900
+      - HOST=0.0.0.0
