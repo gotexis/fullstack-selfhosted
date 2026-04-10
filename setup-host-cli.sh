@@ -13,12 +13,13 @@ CLI_NAME=$(node -e "const p=JSON.parse(require('fs').readFileSync('package.json'
 echo "📦 Installing dependencies..."
 pnpm install --frozen-lockfile 2>/dev/null || pnpm install
 
-# Create a wrapper script that uses tsx to run TS source directly
+# Create a wrapper script that uses tsx to run TS source directly (no build)
 WRAPPER="$DIR/bin/$CLI_NAME"
 mkdir -p "$DIR/bin"
+TSX_BIN="$DIR/node_modules/.bin/tsx"
 cat > "$WRAPPER" << SCRIPT
 #!/bin/bash
-exec $(which npx) tsx "$DIR/src/cli/index.ts" "\$@"
+exec "$TSX_BIN" "$DIR/src/cli/index.ts" "\$@"
 SCRIPT
 chmod +x "$WRAPPER"
 
