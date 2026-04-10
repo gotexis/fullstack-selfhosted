@@ -30,7 +30,4 @@ ENV HOST=0.0.0.0
 
 EXPOSE 3900
 
-# Register CLI globally inside container
-RUN chmod +x dist/cli/index.js && ln -s /app/dist/cli/index.js /usr/local/bin/selfhosted-template-cli
-
 CMD ["node", "dist/server/index.js"]
