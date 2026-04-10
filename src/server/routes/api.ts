@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getHealth, getServiceInfo } from "../../core/index.js";
+import { getHealth, getServiceInfo } from "../../core/index.ts";
 
 const router = Router();
 

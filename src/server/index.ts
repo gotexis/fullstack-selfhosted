@@ -3,7 +3,7 @@ import compression from "compression";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 import fs from "node:fs";
-import apiRouter from "./routes/api.js";
+import apiRouter from "./routes/api.ts";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PORT = parseInt(process.env.PORT || "3900", 10);

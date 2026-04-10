@@ -5,7 +5,7 @@
  */
 
 import { Command } from "commander";
-import { getHealth, getServiceInfo, getVersion } from "../core/index.js";
+import { getHealth, getServiceInfo, getVersion } from "../core/index.ts";
 
 const program = new Command();
 
@@ -49,7 +49,7 @@ program
     process.env.PORT = opts.port;
     process.env.HOST = opts.host;
     // Dynamic import to start the server
-    await import("../server/index.js");
+    await import("../server/index.ts");
   });
 
 program.parse();
