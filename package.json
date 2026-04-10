@@ -9,13 +9,14 @@
   "scripts": {
     "dev": "tsx watch src/server/index.ts",
     "build": "pnpm build:server && pnpm build:web",
-    "build:server": "tsup src/server/index.ts src/cli/index.ts --format esm --out-dir dist --splitting",
+    "build:server": "tsup src/server/index.ts src/cli/index.ts --format esm --out-dir dist --splitting --external express --external compression --external commander",
     "build:web": "vite build",
     "start": "node dist/server/index.js",
     "preview": "pnpm build && pnpm start",
     "cli": "tsx src/cli/index.ts"
   },
   "dependencies": {
+    "commander": "^13.1.0",
     "compression": "^1.8.0",
     "express": "^5.1.0"
   },
@@ -28,7 +29,6 @@
     "@vitejs/plugin-react": "^4.5.0",
     "autoprefixer": "^10.4.21",
     "clsx": "^2.1.1",
-    "commander": "^13.1.0",
     "postcss": "^8.5.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
