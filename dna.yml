@@ -1,0 +1,7 @@
+id: dna://repo/gotexis-fullstack-selfhosted
+type: repo
+title: fullstack-selfhosted — Full-stack self-hosted template
+description: Full-stack self-hosted project template with CLI scaffolding. Includes selfhosted-template-cli.
+homepage: https://github.com/gotexis/fullstack-selfhosted
+status: active
+managed_by: dna://agent/nebula
